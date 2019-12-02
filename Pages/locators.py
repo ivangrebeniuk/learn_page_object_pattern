@@ -8,3 +8,7 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form > h2")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form > h2")
+
+
+class BookPageLocators:
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
