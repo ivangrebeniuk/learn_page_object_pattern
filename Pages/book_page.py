@@ -5,9 +5,28 @@ import math
 
 
 class BookPage(BasePage):
+
     def add_to_basket(self):
         add_to_basket = self.browser.find_element(*BookPageLocators.ADD_TO_BASKET_BUTTON)
         add_to_basket.click()
+
+    def get_product_name(self):
+        book_name = self.browser.find_element(*BookPageLocators.PRODUCT_NAME)
+        expected = book_name.text
+        book_name_after_adding_to_basket = self.browser.find_element(*BookPageLocators.PRODUCT_NAME_IN_BASKET)
+        actual = book_name_after_adding_to_basket.text
+        assert actual == expected, "Wrong book title is displayed after adding to basket"
+
+    def get_product_price(self):
+        product_price = self.browser.find_element(*BookPageLocators.PRODUCT_PRICE)
+        expected = product_price.text
+        product_price_after_adding_to_basket = self.browser.find_element(*BookPageLocators.PRODUCT_PRICE_IN_BASKET)
+        actual = product_price_after_adding_to_basket.text
+        assert expected == actual, "Wrong product price after adding to basket"
+
+    def should_be_added_to_basket(self):
+        self.get_product_name()
+        self.get_product_price()
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
