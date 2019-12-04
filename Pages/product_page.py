@@ -28,6 +28,14 @@ class BookPage(BasePage):
         self.get_product_name()
         self.get_product_price()
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*BookPageLocators.PRODUCT_SUCCESSFULLY_ADDED_IN_BASKET), \
+            "Success message is presented, but should not be"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*BookPageLocators.PRODUCT_SUCCESSFULLY_ADDED_IN_BASKET), \
+            "Success message disappeared, but should not be"
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]

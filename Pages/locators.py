@@ -16,3 +16,4 @@ class BookPageLocators:
     PRODUCT_NAME_IN_BASKET = (By.CSS_SELECTOR, ".alert:nth-child(1) strong")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color:nth-child(2)")
     PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, ".alertinner > p > strong")
+    PRODUCT_SUCCESSFULLY_ADDED_IN_BASKET = (By.CSS_SELECTOR, ".alert:nth-child(1) > .alertinner")
