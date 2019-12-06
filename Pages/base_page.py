@@ -45,3 +45,10 @@ class BasePage:
     def should_be_login_link(self):
         # "*" используется потому что мы передаем кортеж (2 элемента: how(id or CSS of ...) и what(сам селектор))
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def go_to_basket_page(self):
+        assert self.is_element_present(*BasePageLocators.VIEW_BASKET), "VIEW BASKET button is not displayed, but should be"
+        link = self.browser.find_element(*BasePageLocators.VIEW_BASKET)
+        link.click()
+
+
