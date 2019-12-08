@@ -5,6 +5,7 @@ class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     VIEW_BASKET = (By.CSS_SELECTOR, ".btn-group > .btn:nth-child(1)")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class BasketPageLocators:
@@ -15,9 +16,14 @@ class BasketPageLocators:
 class MainPageLocators:
     pass
 
+
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form > h2")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form > h2")
+    REGISTRATION_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_CONFIRM_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_BUTTON = (By.NAME, "registration_submit")
 
 
 class BookPageLocators:
